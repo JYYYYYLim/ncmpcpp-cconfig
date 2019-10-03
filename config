@@ -40,11 +40,15 @@ visualizer_fifo_path = /tmp/mpd.fifo
 visualizer_output_name = Visualizer feed
 
 ## if you set format to 44100:16:2, make below 'yes'.
+
 visualizer_in_stereo = yes
+
+#------------------------------------------------------------------------------------------------------------------------------------------
 
 visualizer_sync_interval = 30
 
 ## choices: (spectrum, wave, wave_filled, ellipse)
+
 visualizer_type = wave
 visualizer_look = ●▮
 visualizer_color = blue, cyan, green, yellow, magenta, red
@@ -61,7 +65,6 @@ message_delay_time = 5
 
 #=============================================================SONG FORMATTING=============================================================
 
-##
 ## For a song format you can use:
 ##
 ## %l - length
@@ -326,7 +329,7 @@ locked_screen_width_part = 50
 
 #------------------------------------------------------------------------------------------------------------------------------------------
 
-#ask_for_locked_screen_width_part = yes
+ask_for_locked_screen_width_part = yes
 jump_to_now_playing_song_at_start = yes
 ask_before_clearing_playlists = yes
 clock_display_seconds = no
@@ -380,19 +383,19 @@ enable_window_title = yes
 ## - 3 - match only exact values (this mode uses mpd function for searching in
 ##       database and local one for searching in current playlist)
 ##
-#
-#search_engine_default_search_mode = 1
-#
-#external_editor = nano
-#
+
+search_engine_default_search_mode = 1
+external_editor = nano
+
+#------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Note: set to yes if external editor is a console application.
-##
-#use_console_editor = yes
+
+use_console_editor = yes
 
 
 #=============================================================COLOUR DEFINITIONS=============================================================
 
-##
 ## It is possible to set a background color by setting a color value
 ## "<foreground>_<background>", e.g. red_black will set foregound color to red
 ## and background color to black.
