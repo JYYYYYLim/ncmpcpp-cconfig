@@ -1,12 +1,21 @@
 
-###############################################################################################################################################
-#- UNCOMMENT (REMOVE #) ANY PREFERENCE YOU WANT TO USE. ANY PREFERENCE LEFT COMMENTED IS IGNORED BY NCMPCPP- A DEFAULT VALUE IS USED IN PLACE #
-###############################################################################################################################################
+##################################################################################
+#- COMMENT (#) ANY PREFERENCE YOU WISH TO OMIT. A DEFAULT VALUE IS USED IN PLACE #
+##################################################################################
 
 #=============================================================DIRECTORIES=============================================================
 
 ncmpcpp_directory = ~/.ncmpcpp
 lyrics_directory = ~/.lyrics
+
+#=============================================================TAGS=============================================================
+
+## mirror the music_directory variable in ~/.mpd/mpd.conf so as not to fuck up the tag function.
+## this issue seems to be very common, yet overlooked way too much. 
+## so much so, according to some "experts" apparently the tagging library is at fault for this 'bug'. 
+## fucking hell, how many people did this confuse?
+
+mpd_music_dir = ~/music
 
 #=============================================================CONNECTION SETTINGS=============================================================
 
@@ -14,45 +23,18 @@ mpd_host = localhost
 mpd_port = 6600
 mpd_connection_timeout = 5
 
-#=============================================================TAGS=============================================================
-
-## mirror the music_directory variable in ~/.mpd/mpd.conf so as not to fuck up the tag function.
-## this issue seems to be very common, yet overlooked way too much. 
-## so much so, apparently the tagging library is at fault for this 'bug'. 
-## fucking hell, how many people did this confuse?
-
-mpd_music_dir = ~/music
-
 #=============================================================XFADE=============================================================
 
 mpd_crossfade_time = 5
 
+#=============================================================REGEX EXCLUSION=============================================================
+
+##reference: http://www.boost.org/doc/libs/1_46_1/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html
+random_exclude_pattern = "^(temp|midi_songs).*"
+
 #=============================================================VISUALIZER=============================================================
 
-
- audio_output {
-        type            "fifo"
-        name            "Visualizer feed"
-        path            "/tmp/mpd.fifo"
-        format          "44100:16:2"
- }
-visualizer_fifo_path = /tmp/mpd.fifo
-visualizer_output_name = Visualizer feed
-
-## if you set format to 44100:16:2, make below 'yes'.
-
-visualizer_in_stereo = yes
-
-#------------------------------------------------------------------------------------------------------------------------------------------
-
-visualizer_sync_interval = 30
-
-## choices: (spectrum, wave, wave_filled, ellipse)
-
-visualizer_type = wave
-visualizer_look = ●▮
-visualizer_color = blue, cyan, green, yellow, magenta, red
-visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
+#seems like theyre removing this. ommitted to prevent the client shitting itself up
 
 #=============================================================CHARSET ENCODING=============================================================
 
@@ -311,7 +293,7 @@ show_hidden_files_in_local_browser = no
 ## - "screen1,...,screenN" - switch between given sequence of screens.
 ##
 ## Screens available for use: help, playlist, browser, search_engine,
-## media_library, playlist_editor, tag_editor, outputs, visualizer, clock,
+## media_library, playlist_editor, tag_editor, outputs,
 ## lyrics, last_fm.
 ## Note: You can define startup screen by choosing screen from the list above.
 ## Note: You can define startup slave screen by choosing screen from the list above or an empty value for no slave screen.
