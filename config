@@ -8,7 +8,7 @@
 ncmpcpp_directory = ~/.ncmpcpp
 lyrics_directory = ~/.lyrics
 
-#=============================================================TAGS=============================================================
+#-------------------------------------------------------------TAGS-------------------------------------------------------------
 
 ## mirror the music_directory variable in ~/.mpd/mpd.conf so as not to fuck up the tag function.
 ## this issue seems to be very common, yet overlooked way too much. 
